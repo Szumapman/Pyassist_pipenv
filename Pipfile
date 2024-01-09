@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+cowsay = "==6.1"
+pyfiglet = "==1.0.*"
+prompt-toolkit = "==3.0.*"
+validator-collection = "==1.5"
+
+[dev-packages]
+pytest = "*"
+
+[requires]
+python_version = "3.11"
