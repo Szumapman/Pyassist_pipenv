@@ -111,13 +111,15 @@ class AddressBook(UserDict):
                 for record in self.data.values():
                     record_dict = {"name": record.name.value}
                     phones = []
-                    for phone in record.phones:
-                        phones.append(phone.value)
-                    record_dict["phones"] = "|".join(phones)
+                    if record.phones:
+                        for phone in record.phones:
+                            phones.append(phone.value)
+                        record_dict["phones"] = "|".join(phones)
                     emails = []
-                    for email in record.emails:
-                        emails.append(email.value)
-                    record_dict["emails"] = "|".join(emails)
+                    if record.emails:
+                        for email in record.emails:
+                            emails.append(email.value)
+                        record_dict["emails"] = "|".join(emails)
                     if record.birthday is not None:
                         record_dict["birthday"] = record.birthday.value.strftime(
                             "%d %m %Y"
